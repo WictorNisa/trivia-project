@@ -1,0 +1,35 @@
+.cardContainer {
+  background-color: antiquewhite;
+  width: 40%;
+  height: 60%;
+  margin: auto;
+}
+
+.answerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.correct {
+    background-color: #d4edda;
+    border-color: #155724;
+    color: #155724;
+    pointer-events: none; /* Optional: Disable clicking */
+  }
+  
+  .incorrect {
+    background-color: #f8d7da;
+    border-color: #721c24;
+    color: #721c24;
+    pointer-events: none;
+  }
+  
+  .default {
+    background-color: #ffffff;
+    border-color: #cccccc;
+    color: #000000;
+  }
+  

@@ -1,7 +1,7 @@
 export const fetchQuiz = async (cat: string, diff: string, noq: string) => {
   let url = `https://opentdb.com/api.php?amount=${noq}`;
   if (cat) url += `&category=${cat}`;
-  if (diff) url += `&cdifficulty=${diff}`;
+  if (diff) url += `&difficulty=${diff}`;
   try {
     const response = await fetch(url);
     const data = await response.json();
