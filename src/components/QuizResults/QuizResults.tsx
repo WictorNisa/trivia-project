@@ -1,8 +1,8 @@
-
+import styles from './QuizResults.module.css'
 
 const QuizResults = ({handleRestartQuiz, score, arr}) => {
   return (
-    <div>
+    <div className={styles.quizResultsContainer}>
         <h1>Quiz finished</h1>
         <p>You scored {score} out of {arr.length} points</p>
         <button onClick={handleRestartQuiz}>
