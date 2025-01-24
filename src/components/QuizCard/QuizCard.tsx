@@ -7,8 +7,9 @@ const QuizCard = ({ current, index, onCorrectAnswer }) => {
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
 
   const handleUserSelection = (e) => {
-    setUserAnswer(e.target.value);
-    if (userAnswer === current.correct_answer) {
+    const selectedAnswer = e.target.value;
+    setUserAnswer(selectedAnswer);
+    if (selectedAnswer === current.correct_answer) {
       setIsCorrect(true);
       onCorrectAnswer();
     }
@@ -28,9 +29,8 @@ const QuizCard = ({ current, index, onCorrectAnswer }) => {
     const shuffledArr = [...current.incorrect_answers, current.correct_answer];
     shuffledArr.sort(() => Math.random() - 0.5);
     setAnswers(shuffledArr);
-    setUserAnswer('');
+    setUserAnswer("");
     setIsCorrect(false);
-    
   }, [current]);
 
   return (
@@ -56,7 +56,6 @@ const QuizCard = ({ current, index, onCorrectAnswer }) => {
             </label>
           </span>
         ))}
-        
       </form>
     </div>
   );

@@ -6,7 +6,9 @@ import QuizDisplay from "../../components/QuizDisplay/QuizDisplay";
 
 const Quiz = () => {
   const [questionsArray, setQuestionsArray] = useState([]);
-  const [quizStarted, setQuizStarted] = useState(false);
+  const [isQuizActive, setIsQuizActive] = useState<boolean>(false);
+  let [score, setScore] = useState<number>(0);
+
   const onHandleSubmit = (
     e,
     selectedCategory,
@@ -22,23 +24,34 @@ const Quiz = () => {
       .then((res) => {
         if (res && res.results) {
           setQuestionsArray(res.results);
-          setQuizStarted(true);
+          setIsQuizActive(true);
         }
       })
       .catch((error) => console.error("Error fetching quiz:", error));
   };
-  console.log(questionsArray);
+
+  const handleRestartQuiz = () => {
+    console.log(`reset button clicked`);
+    setScore(0)
+    setQuestionsArray([])
+    setIsQuizActive(false);
+  };
 
   return (
     <section className={styles.quizContainer}>
-      {!quizStarted && (
+      {!isQuizActive && (
         <>
           <h1>Set up the quiz!</h1>
           <QuizForm onHandleSubmit={onHandleSubmit} />
         </>
       )}
-      {quizStarted && questionsArray.length > 0 && (
-        <QuizDisplay arr={questionsArray} />
+      {isQuizActive && questionsArray.length > 0 && (
+        <QuizDisplay
+          arr={questionsArray}
+          handleRestartQuiz={handleRestartQuiz}
+          score={score}
+          setScore={setScore}
+        />
       )}
     </section>
   );
