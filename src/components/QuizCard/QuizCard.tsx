@@ -10,7 +10,7 @@ interface QuizCardProps {
     incorrect_answers: string[];
   };
   onCorrectAnswer: () => void;
-  
+  index:number
 }
 
 const QuizCard = ({ current, onCorrectAnswer }: QuizCardProps) => {
