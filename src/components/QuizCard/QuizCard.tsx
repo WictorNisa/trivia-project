@@ -1,12 +1,24 @@
 import { useState, useEffect } from "react";
 import styles from "./QuizCard.module.css";
+import { ChangeEvent } from 'react';
 
-const QuizCard = ({ current, index, onCorrectAnswer }) => {
+interface QuizCardProps {
+  current: {
+    question: string;
+    category: string;
+    correct_answer: string;
+    incorrect_answers: string[];
+  };
+  onCorrectAnswer: () => void;
+  index: number;
+}
+
+const QuizCard = ({ current, onCorrectAnswer }: QuizCardProps) => {
   const [answers, setAnswers] = useState<any>([]);
   const [userAnswer, setUserAnswer] = useState<string>("");
   const [isCorrect, setIsCorrect] = useState<boolean>(false);
 
-  const handleUserSelection = (e) => {
+  const handleUserSelection = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedAnswer = e.target.value;
     setUserAnswer(selectedAnswer);
     if (selectedAnswer === current.correct_answer) {
@@ -39,7 +51,7 @@ const QuizCard = ({ current, index, onCorrectAnswer }) => {
       <p>{current.category}</p>
       <form className={styles.answerContainer}>
      
-        {answers.map((answer: any, index) => (
+        {answers.map((answer: any, index:any) => (
           <span key={index}>
             <label
               key={index}

@@ -1,9 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import QuizCard from "../QuizCard/QuizCard";
 import styles from "./QuizDisplay.module.css";
 import QuizResults from "../QuizResults/QuizResults";
 
-const QuizDisplay = ({ arr, handleRestartQuiz, score, setScore }) => {
+interface QuizDisplayProps {
+  arr: any[]; // Replace 'any' with the appropriate type if known
+  handleRestartQuiz: () => void;
+  score: number;
+  setScore: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const QuizDisplay = ({ arr, handleRestartQuiz, score, setScore }: QuizDisplayProps) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const onClickNextQuestion = () => {
@@ -31,7 +38,6 @@ const QuizDisplay = ({ arr, handleRestartQuiz, score, setScore }) => {
             current={arr[currentQuestionIndex]}
             index={currentQuestionIndex}
             onCorrectAnswer={onCorrectAnswer}
-            
           />
           {currentQuestionIndex < arr.length && (
             <div className={styles.buttonContainer}>

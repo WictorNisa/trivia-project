@@ -1,6 +1,12 @@
 import styles from './QuizResults.module.css'
 
-const QuizResults = ({handleRestartQuiz, score, arr}) => {
+interface QuizResultsProps {
+  handleRestartQuiz: () => void;
+  score: number;
+  arr: any[];
+}
+
+const QuizResults: React.FC<QuizResultsProps> = ({handleRestartQuiz, score, arr}) => {
   return (
     <div className={styles.quizResultsContainer}>
         <h1>Quiz finished</h1>

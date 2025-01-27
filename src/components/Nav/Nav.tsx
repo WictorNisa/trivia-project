@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
-import { useScroll, motion } from "motion/react";
+import { useScroll } from "motion/react";
 import { useState, useEffect } from "react";
 import Lenis from "lenis";
 const Nav = () => {

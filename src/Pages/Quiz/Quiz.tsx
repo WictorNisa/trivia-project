@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, FormEvent } from "react";
 import QuizForm from "../../components/QuizForm/QuizForm";
 import styles from "./Quiz.module.css";
 import { fetchQuiz } from "../../services/Api";
@@ -10,10 +10,10 @@ const Quiz = () => {
   let [score, setScore] = useState<number>(0);
 
   const onHandleSubmit = (
-    e,
-    selectedCategory,
-    selectedDifficulty,
-    selectedNoq
+    e: FormEvent<HTMLFormElement>,
+    selectedCategory:string,
+    selectedDifficulty:string,
+    selectedNoq:any
   ) => {
     e.preventDefault();
     const numberOfQuestions = selectedNoq || 10;

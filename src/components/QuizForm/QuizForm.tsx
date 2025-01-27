@@ -1,24 +1,24 @@
-import { useState } from "react";
-import styles from './QuizForm.module.css'
+import { useState, FormEvent } from "react";
+import styles from "./QuizForm.module.css";
 
-const QuizForm = ({ onHandleSubmit }) => {
+interface QuizFormProps {
+  onHandleSubmit: (e: FormEvent<HTMLFormElement>, category: string, difficulty: string, noq: string) => void;
+}
+
+const QuizForm = ({ onHandleSubmit }: QuizFormProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("");
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>("");
   const [selectedNoq, setSelectedNoq] = useState<string>("");
 
-  const handleCategoryChange = (e) => {
+  const handleCategoryChange = (e:any) => {
     setSelectedCategory(e.target.value);
-   
   };
-  
 
-  const handleDifficultyChange = (e) => {
+  const handleDifficultyChange = (e:any) => {
     setSelectedDifficulty(e.target.value);
-    
   };
-  
 
-  const handleNoqChange = (e) => {
+  const handleNoqChange = (e:any) => {
     setSelectedNoq(e.target.value);
   };
 
