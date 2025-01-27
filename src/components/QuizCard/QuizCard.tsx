@@ -10,13 +10,13 @@ interface QuizCardProps {
     incorrect_answers: string[];
   };
   onCorrectAnswer: () => void;
-  index: number;
+  
 }
 
 const QuizCard = ({ current, onCorrectAnswer }: QuizCardProps) => {
   const [answers, setAnswers] = useState<any>([]);
   const [userAnswer, setUserAnswer] = useState<string>("");
-  const [isCorrect, setIsCorrect] = useState<boolean>(false);
+  const [, setIsCorrect] = useState<boolean>(false);
 
   const handleUserSelection = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedAnswer = e.target.value;
