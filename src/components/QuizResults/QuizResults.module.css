@@ -1,3 +1,23 @@
-.quizResultsContainer{
-    background-color: white;
+.quizResultsContainer {
+  width: 40%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quizResultsContainer h1 {
+  color: white;
+  font-family: Cambridge;
+  font-size: 10vh;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+.quizResultsContainer p {
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 2rem;
+  color: white;
 }

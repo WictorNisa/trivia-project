@@ -38,6 +38,7 @@ const QuizCard = ({ current, index, onCorrectAnswer }) => {
       <h1>{current.question}</h1>
       <p>{current.category}</p>
       <form className={styles.answerContainer}>
+     
         {answers.map((answer: any, index) => (
           <span key={index}>
             <label
@@ -56,6 +57,7 @@ const QuizCard = ({ current, index, onCorrectAnswer }) => {
             </label>
           </span>
         ))}
+        
       </form>
     </div>
   );

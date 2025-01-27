@@ -23,13 +23,41 @@
   font-size: 3rem;
   font-weight: normal;
   letter-spacing: 3px;
+  padding-bottom: 1rem;
 }
 
-.aboutImageContainer {
+.aboutTextContainer p {
+  line-height: 1.5;
+  padding-bottom: 1rem;
+  font-weight: bolder;
+}
+
+.aboutThingsToComeContainer {
   width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.aboutThingsToComeContainer h3 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: normal;
+  letter-spacing: 3px;
+}
+
+
+.aboutThingsToComeContainer ul {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.aboutThingsToComeContainer ul li {
+  font-family: "Playfair Display", serif;
+  color: white;
+  padding-bottom: .5rem;
+  font-weight: bolder;
 }

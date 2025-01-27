@@ -1,5 +1,4 @@
 .quizDisplayContainer{
-    
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -7,4 +6,35 @@
     justify-content: center;
     align-items: center;
     margin: 0;
+}
+
+.quizDisplayContainer button{
+    background-color: transparent;
+    width: 200px;
+    padding: 12px;
+    color: white;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.quizDisplayContainer button:hover{
+    background-color: blueviolet;
+}
+
+.questionDisplayWrapper{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.questionDisplayWrapper h4 {
+    color: #fff;
+    font-size: 1.2rem;
 }

@@ -43,7 +43,10 @@
   border-radius: 8px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-  transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+.heroInnerContainer button a:hover{
+  color: #474747;
 }
 
 .heroInnerContainer button a {

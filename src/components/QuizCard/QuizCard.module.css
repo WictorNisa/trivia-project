@@ -1,4 +1,4 @@
-.cardContainer {
+/* .cardContainer {
   background-color: antiquewhite;
   width: 40%;
   height: 60%;
@@ -10,26 +10,97 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+} */
+
+.cardContainer {
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px solid #fff;
+  font-family: "Playfair Display", serif;
+  color: #fff;
 }
 
+.cardContainer h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 
-.correct {
-    background-color: #d4edda;
-    border-color: #155724;
-    color: #155724;
-    pointer-events: none; /* Optional: Disable clicking */
+.cardContainer p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  /* font-family: Cambridge; */
+  letter-spacing: 1px;
+}
+
+.answerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;;
+}
+
+.answerContainer label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+}
+
+.answerContainer input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.answerContainer label:hover {
+  background-color: #e0e0e0;
+}
+
+.answerContainer label.correct {
+  background-color: #28a745;
+  color: white;
+}
+
+.answerContainer label.incorrect {
+  background-color: #dc3545;
+  color: white;
+}
+
+.answerContainer label.default {
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.answerContainer label[disabled] {
+  cursor: not-allowed;
+  background-color: #ddd;
+}
+
+.answerContainer label[disabled]:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 600px) {
+  .cardContainer {
+    padding: 15px;
   }
-  
-  .incorrect {
-    background-color: #f8d7da;
-    border-color: #721c24;
-    color: #721c24;
-    pointer-events: none;
+
+  .cardContainer h1 {
+    font-size: 20px;
   }
-  
-  .default {
-    background-color: #ffffff;
-    border-color: #cccccc;
-    color: #000000;
+
+  .answerContainer {
+    width: 100%;
   }
-  
+}

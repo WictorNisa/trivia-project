@@ -25,19 +25,20 @@ const QuizDisplay = ({ arr, handleRestartQuiz, score, setScore }) => {
           arr={arr}
         />
       ) : (
-        <>
-          <span>{`Question ${currentQuestionIndex + 1} of ${arr.length}`}</span>
+        <div className={styles.questionDisplayWrapper}>
+          <h4>{`Question ${currentQuestionIndex + 1} of ${arr.length}`}</h4>
           <QuizCard
             current={arr[currentQuestionIndex]}
             index={currentQuestionIndex}
             onCorrectAnswer={onCorrectAnswer}
+            
           />
           {currentQuestionIndex < arr.length && (
             <div className={styles.buttonContainer}>
               <button onClick={onClickNextQuestion}>next</button>
             </div>
           )}
-        </>
+        </div>
       )}
     </div>
   );

@@ -8,16 +8,18 @@ const Home = () => {
     <section className={styles.homeContainer}>
       <div className={styles.heroContainer}>
         <div className={styles.heroInnerContainer}>
-        <h1>Are You a Trivia Master?</h1>
-        <p>Join the Fun and Test Your Knowledge Across Multiple Categories!</p>
-        <button>
-          <Link to="/quizsetup">Start Quiz Now</Link>
-        </button>
+          <h1>Are You a Trivia Master?</h1>
+          <p>
+            Join the Fun and Test Your Knowledge Across Multiple Categories!
+          </p>
+
+          <button>
+            <Link to="/quizsetup">Start Quiz Now</Link>
+          </button>
         </div>
-       
       </div>
-      <AboutSection/>
-      <ContactSection/>
+      <AboutSection />
+      <ContactSection />
     </section>
   );
 };
